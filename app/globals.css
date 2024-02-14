@@ -66,6 +66,11 @@
   }
 }
 
+.icon {
+  filter: invert(60%) sepia(10%) saturate(2944%) hue-rotate(350deg)
+    brightness(90%) contrast(89%);
+}
+
 @layer base {
   * {
     @apply border-border;

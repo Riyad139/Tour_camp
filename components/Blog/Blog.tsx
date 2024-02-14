@@ -4,7 +4,7 @@ export default function Blog() {
   return (
     <>
       <section className="grid mt-24 mb-16  text-center gap-10 grid-cols-3">
-        <h1 className="col-start-1 mb-7 text-7xl font-semibold col-end-4">
+        <h1 className="col-start-1 font-DmSerif mb-7 text-7xl font-semibold col-end-4">
           the blog.
         </h1>
         <div className="col-start-1 text-left col-end-3 w-full">
