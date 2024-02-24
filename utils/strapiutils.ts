@@ -19,3 +19,19 @@ export const FetchFromStrapiForInfoBlocks = async (url: string) => {
     console.log(err);
   }
 };
+
+export const FetchBlogFromStrapi = async (url: string) => {
+  try {
+    const res = await axios.get(path + url + "?populate=deep");
+    const result = res.data.data.map((item: any) => {
+      return {
+        id: item.id,
+        ...item.attributes,
+        coverImage: item.attributes.coverImage.data.attributes.url,
+      };
+    });
+    return result;
+  } catch (err) {
+    console.log(err);
+  }
+};

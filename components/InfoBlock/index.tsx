@@ -14,7 +14,9 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
       )}
     >
       <Image
-        src={process.env.strapi_image_path + image || "/experience.png"}
+        src={
+          process.env.NEXT_PUBLIC_strapi_image_path + image || "/experience.png"
+        }
         className={classNames(
           "w-[50%] h-[500px] object-cover ",
           showImageRight ? "rounded-e-full" : "rounded-s-full"

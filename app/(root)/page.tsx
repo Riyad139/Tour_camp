@@ -6,7 +6,6 @@ import { InfoType } from "@/utils/type";
 
 export default async function Home() {
   const result = await FetchFromStrapiForInfoBlocks("/infoblock-landing");
-  console.log(result);
   return (
     <main className="">
       <Header
