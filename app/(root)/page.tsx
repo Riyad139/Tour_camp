@@ -15,13 +15,13 @@ export default async function Home() {
   const blogs = await FetchBlogFromStrapi("/blogs");
 
   const hero = await FetchHeroesFromStrapi("/hero-landing");
-
+  console.log(hero);
   return (
     <main className="">
       <Header
         textColor={!hero?.TextWhite ? "white" : "black"}
         text={hero?.Headline}
-        img={process.env.NEXT_PUBLIC_strapi_image_path + hero?.image}
+        img={hero?.image}
       />
       <div className="mt-[25%] space-y-16 ">
         {result.map((item: InfoType) => (

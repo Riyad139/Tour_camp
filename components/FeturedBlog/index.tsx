@@ -27,7 +27,7 @@ export default function FeturedBlog({
       </div>
       <Image
         className="max-h-[26rem] object-cover w-[50%] rounded-3xl"
-        src={process.env.NEXT_PUBLIC_strapi_image_path + coverImage}
+        src={ coverImage}
         width={1920}
         height={1080}
         alt="blog image"

@@ -22,7 +22,7 @@ export default function ArticleCard({
         className="p-0"
       >
         <Image
-          src={process.env.NEXT_PUBLIC_strapi_image_path + coverImage}
+          src={ coverImage}
           className="rounded-t-xl w-full h-96 object-cover"
           width={500}
           height={500}

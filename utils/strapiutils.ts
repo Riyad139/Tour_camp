@@ -14,6 +14,7 @@ export const FetchFromStrapiForInfoBlocks = async (url: string) => {
         };
       }
     );
+
     return result;
   } catch (err) {}
 };
@@ -38,6 +39,7 @@ export const FetchHeroesFromStrapi = async (url: string) => {
 
     const { Headline, image, TextWhite } =
       res.data.data.attributes.heroes.data[0].attributes;
+    console.log(res.data.data.attributes.heroes.data[0].attributes);
     return { Headline, image: image.data.attributes.url, TextWhite };
   } catch (err) {}
 };
