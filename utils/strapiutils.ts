@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const path = "http://127.0.0.1:1337/api";
+export const path = process.env.NEXT_PUBLIC_strapi_url;
 
 export const FetchFromStrapiForInfoBlocks = async (url: string) => {
   try {
