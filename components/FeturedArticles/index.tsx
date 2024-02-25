@@ -12,6 +12,7 @@ export default function FeturedArticles({
     slug: string;
   }[];
 }) {
+  
   return (
     <div className="w-full">
       <h2 className="mb-7 mt-9 text-4xl ml-12 font-DmSerif">
