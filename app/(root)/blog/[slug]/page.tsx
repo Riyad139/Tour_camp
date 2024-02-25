@@ -75,3 +75,10 @@ export default async function Slug({ params }: { params: { slug: string } }) {
     </main>
   );
 }
+
+export async function generateStaticParams() {
+  const result = await FetchBlogFromStrapi("/blogs");
+  return result.map((item: { slug: string }) => ({
+    slug: item.slug,
+  }));
+}

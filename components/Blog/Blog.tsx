@@ -1,70 +1,38 @@
 import Image from "next/image";
+import FeturedArticles from "../FeturedArticles";
+import ArticleCard from "../ArticleCard/ArticleCard";
+import LandingArticleCard from "../ArticleCard/LandingArticle";
 
-export default function Blog() {
+export default function Blog({
+  blogs,
+}: {
+  blogs: {
+    id: number;
+    headline: string;
+    coverImage: string;
+    createdAt: string;
+    slug: string;
+  }[];
+}) {
   return (
     <>
-      <section className="grid mt-24 mb-16  text-center gap-10 grid-cols-3">
+      <section className="grid mt-24 mb-16  text-center gap-y-10 sm:gap-y-0 sm:gap-10 grid-cols-4 lg:grid-cols-3">
         <h1 className="col-start-1 font-DmSerif mb-7 text-7xl font-semibold col-end-4">
           the blog.
         </h1>
-        <div className="col-start-1 text-left col-end-3 w-full">
-          <Image
-            className="col-end-3 w-full h-[350px] rounded-3xl  object-cover "
-            src={"/surf.png"}
-            width={1920}
-            quality={100}
-            height={1080}
-            alt="surf"
-          />
-
-          <h4 className="text-2xl ml-2 mt-4 font-semibold">
-            3 tips for a super fast take off
-          </h4>
-          <p className="text-sm ml-2 mt-1">Monday, June 05,2023</p>
+        <div className="col-start-1 text-left col-end-6 sm:col-end-3  w-full">
+          <LandingArticleCard {...blogs[0]} />
         </div>
-        <div className="col-start-3 text-left col-end-4 w-full">
-          <Image
-            className=" mb-3 rounded-3xl w-full object-cover h-[350px]"
-            src={"/sands.png"}
-            width={600}
-            height={600}
-            alt=""
-          />
-          <h4 className="text-2xl ml-2 font-semibold">
-            your perfect stretching routine <br /> before your first <br />{" "}
-            surfing session
-          </h4>
-          <p className="text-sm ml-2 mt-1">Monday, June 05,2023</p>
+        <div className=" col-start-1 sm:col-start-3  text-left col-end-5 lg:col-end-4 w-full">
+          <LandingArticleCard {...blogs[1]} />
         </div>
       </section>
       <section className="grid mb-10   gap-14 grid-cols-4">
-        <div className="col-start-1  col-end-3">
-          <Image
-            src={"/boats.png"}
-            className="h-[21.875rem] object-cover rounded-2xl"
-            alt="wa"
-            width={700}
-            height={800}
-          />
-          <h3 className="text-2xl ml-2 font-semibold mt-5">
-            surfboard shaping and design: behind the scenes of crafting the
-            perfect board
-          </h3>
-          <p className="text-sm ml-2 mt-1">Monday, June 05,2023</p>
+        <div className="col-start-1  sm:col-end-3 col-end-5">
+          <LandingArticleCard {...blogs[2]} />
         </div>
-        <div className="col-start-3  col-end-5">
-          <Image
-            src={"/water.png"}
-            className="h-[21.875rem] object-cover rounded-2xl"
-            alt="wa"
-            width={700}
-            height={800}
-          />
-          <h3 className="text-2xl ml-2 font-semibold mt-5">
-            environmental awareness in surfing: protecting our oceans and
-            beaches
-          </h3>
-          <p className="text-sm ml-2 mt-1">Monday, June 05,2023</p>
+        <div className=" col-start-1 sm:col-start-3  col-end-5">
+          <LandingArticleCard {...blogs[3]} />
         </div>
       </section>
     </>

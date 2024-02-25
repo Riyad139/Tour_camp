@@ -1,16 +1,20 @@
 import Header from "@/components/Header";
 import InfoBlock from "@/components/InfoBlock";
-import { FetchFromStrapiForInfoBlocks } from "@/utils/strapiutils";
+import {
+  FetchFromStrapiForInfoBlocks,
+  FetchHeroesFromStrapi,
+} from "@/utils/strapiutils";
 import { InfoType } from "@/utils/type";
 
 export default async function Experience() {
   const result = await FetchFromStrapiForInfoBlocks("/infoblock-experience");
+  const hero = await FetchHeroesFromStrapi("/hero-experience");
   return (
     <main>
       <Header
-        textColor="white"
-        text="discover.your.spirit"
-        img="/experience.png"
+        textColor={hero?.TextWhite ? "white" : "black"}
+        text={hero?.Headline}
+        img={process.env.NEXT_PUBLIC_strapi_image_path + hero?.image}
       />
       <div className="mt-[25%] space-y-16 ">
         {result.map((item: InfoType) => (

@@ -15,19 +15,24 @@ export default function BlogImageParaGraph({
   return (
     <div
       className={classNames(
-        "flex gap-10 py-5",
-        showImageRight ? "" : "flex-row-reverse"
+        "flex md:flex-row flex-col gap-10 py-5",
+        showImageRight ? "" : "md:flex-row-reverse"
       )}
     >
       <Markdown
-        className={classNames("", LandScapeImage ? " w-[49%]" : ["w-full"])}
+        className={classNames(
+          "",
+          LandScapeImage ? " md:w-[49%] w-full" : "w-full"
+        )}
       >
         {description}
       </Markdown>
       <Image
         className={classNames(
           "object-cover rounded-md",
-          LandScapeImage ? "h-[30rem] w-[49%]" : "h-[40rem] w-[28%]"
+          LandScapeImage
+            ? "h-[30rem] md:w-[49%] w-full"
+            : "h-[40rem] w-full md:w-[28%] flex-shrink-0 "
         )}
         src={image}
         width={500}

@@ -1,24 +1,34 @@
 import Blog from "@/components/Blog/Blog";
 import Header from "@/components/Header";
 import InfoBlock from "@/components/InfoBlock";
-import { FetchFromStrapiForInfoBlocks } from "@/utils/strapiutils";
+
+import {
+  FetchBlogFromStrapi,
+  FetchFromStrapiForInfoBlocks,
+  FetchHeroesFromStrapi,
+} from "@/utils/strapiutils";
 import { InfoType } from "@/utils/type";
 
 export default async function Home() {
   const result = await FetchFromStrapiForInfoBlocks("/infoblock-landing");
+
+  const blogs = await FetchBlogFromStrapi("/blogs");
+
+  const hero = await FetchHeroesFromStrapi("/hero-landing");
+
   return (
     <main className="">
       <Header
-        textColor="black"
-        text="barrel.your.happiness"
-        img="/home-hero.png"
+        textColor={!hero?.TextWhite ? "white" : "black"}
+        text={hero?.Headline}
+        img={process.env.NEXT_PUBLIC_strapi_image_path + hero?.image}
       />
       <div className="mt-[25%] space-y-16 ">
         {result.map((item: InfoType) => (
           <InfoBlock value={item} key={item.id} />
         ))}
       </div>
-      <Blog />
+      <Blog blogs={blogs} />
     </main>
   );
 }

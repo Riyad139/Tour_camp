@@ -9,8 +9,8 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
   return (
     <div
       className={classNames(
-        "flex  py-7 gap-16",
-        showImageRight ? "flex-row-reverse" : ""
+        "flex md:flex-row flex-col  py-7 gap-16",
+        showImageRight ? "md:flex-row-reverse" : ""
       )}
     >
       <Image
@@ -18,15 +18,15 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
           process.env.NEXT_PUBLIC_strapi_image_path + image || "/experience.png"
         }
         className={classNames(
-          "w-[50%] h-[500px] object-cover ",
+          "md:w-[50%] w-full h-[500px] object-cover ",
           showImageRight ? "rounded-e-full" : "rounded-s-full"
         )}
         width={600}
         height={600}
         alt="home"
       />
-      <div className="w-[50%] mt-5">
-        <h2 className="text-7xl font-DmSerif font-semibold mb-11">
+      <div className=" md:w-[50%] w-full mt-5">
+        <h2 className="text-4xl md:text-7xl font-DmSerif font-semibold mb-11">
           {headline}
         </h2>
         <p>{descriptions}</p>

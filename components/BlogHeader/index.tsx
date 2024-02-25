@@ -17,7 +17,7 @@ export default function BlogHeader({
   return (
     <section className="flex font-DmSerif  min-h-[80vh] flex-col mt-40 items-start">
       <Image
-        className="w-full  rounded-br-[15%] rounded-bl-[15%] top-0 object-cover h-[90%]  left-0 -z-10 absolute"
+        className="w-full brightness-50  rounded-br-[15%] rounded-bl-[15%] top-0 object-cover h-[90%]  left-0 -z-10 absolute"
         src={img}
         alt=""
         width={1000}
@@ -27,7 +27,7 @@ export default function BlogHeader({
 
       <div
         className={classNames(
-          "text-5xl  font-semibold space-y-3",
+          " text-3xl md:text-5xl  font-semibold space-y-3",
           textColor ? `text-${textColor}` : ""
         )}
       >

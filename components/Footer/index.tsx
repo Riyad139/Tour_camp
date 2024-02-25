@@ -26,7 +26,7 @@ export default function Footer() {
             height={600}
             alt="icon"
           />
-          <ul className="flex text-2xl font-semibold space-x-7">
+          <ul className="flex sm:flex-row flex-col px-7 sm:text-base text-xl md:text-2xl font-semibold space-y-4 sm:space-x-7">
             {NavItem.map((item) => (
               <Link key={item.path} href={item.path}>
                 <h5>{item.name}</h5>
@@ -35,13 +35,6 @@ export default function Footer() {
           </ul>
         </nav>
         <div className="flex px-6 items-center justify-between mt-11">
-          <ul className="flex text-2xl font-semibold space-x-7">
-            {footerLink.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <h5>{item.name}</h5>
-              </Link>
-            ))}
-          </ul>
           <p>&copy; Riyad&apos;s Tour camp - all rights reserved</p>
         </div>
       </div>

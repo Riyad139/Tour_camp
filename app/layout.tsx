@@ -3,6 +3,7 @@ import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { createContext } from "react";
 
 const inter = DM_Serif_Display({
   subsets: ["latin"],

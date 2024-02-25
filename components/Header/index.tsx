@@ -11,9 +11,9 @@ export default function Header({
   textColor: string;
 }) {
   return (
-    <section className="flex font-DmSerif mb-[25%] flex-col mt-40 justify-end    items-start">
+    <section className="flex min-h-[75vh] sm:min-h-[65vh] lg:min-h-[55vh] font-DmSerif  flex-col  justify-center    items-start">
       <Image
-        className="w-full  rounded-br-[15%] rounded-bl-[15%] top-0 object-cover h-[90%]  left-0 -z-10 absolute"
+        className="w-full brightness-50  rounded-br-[15%] rounded-bl-[15%] top-0 object-cover h-[90%]  left-0 -z-10 absolute"
         src={img}
         alt=""
         width={1000}
@@ -23,13 +23,11 @@ export default function Header({
 
       <div
         className={classNames(
-          "text-8xl  font-semibold space-y-3",
+          " text-6xl md:text-8xl font-semibold space-y-3",
           textColor ? `text-${textColor}` : ""
         )}
       >
-        {text.split(".").map((item) => (
-          <h1 key={item}>{item}.</h1>
-        ))}
+        {text}
       </div>
       <Button
         className="text-2xl bg-[#14A998] mt-16 rounded-full uppercase"

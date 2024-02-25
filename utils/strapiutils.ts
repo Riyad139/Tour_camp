@@ -15,9 +15,7 @@ export const FetchFromStrapiForInfoBlocks = async (url: string) => {
       }
     );
     return result;
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const FetchBlogFromStrapi = async (url: string) => {
@@ -31,7 +29,15 @@ export const FetchBlogFromStrapi = async (url: string) => {
       };
     });
     return result;
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
+};
+
+export const FetchHeroesFromStrapi = async (url: string) => {
+  try {
+    const res = await axios.get(path + url + "?populate=deep");
+
+    const { Headline, image, TextWhite } =
+      res.data.data.attributes.heroes.data[0].attributes;
+    return { Headline, image: image.data.attributes.url, TextWhite };
+  } catch (err) {}
 };
