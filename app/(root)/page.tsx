@@ -15,7 +15,7 @@ export default async function Home() {
   const blogs = await FetchBlogFromStrapi("/blogs");
 
   const hero = await FetchHeroesFromStrapi("/hero-landing");
-  console.log(hero);
+
   return (
     <main className="">
       <Header
