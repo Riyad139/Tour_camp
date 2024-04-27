@@ -20,6 +20,7 @@ export default async function Experience() {
             : hero?.image
         }
       />
+      
       <div className="mt-[25%] space-y-16 ">
         {result.map((item: InfoType) => (
           <InfoBlock value={item} key={item.id} />
