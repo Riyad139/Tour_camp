@@ -49,8 +49,10 @@ export default async function Slug({ params }: { params: { slug: string } }) {
                   LandScapeImage={content.LandScapeImage}
                   showImageRight={content.showImageRight}
                   image={
-                    process.env.NEXT_PUBLIC_image_url +
-                    content.image.data.attributes.url
+                    process.env.DEVELOPMENT == "TRUE"
+                      ? process.env.NEXT_PUBLIC_image_url +
+                        content.image.data.attributes.url
+                      : content.image.data.attributes.url
                   }
                 />
               );
@@ -60,8 +62,10 @@ export default async function Slug({ params }: { params: { slug: string } }) {
               return (
                 <BlogLandScapeImage
                   image={
-                    process.env.NEXT_PUBLIC_image_url +
-                    content.image.data.attributes.url
+                    process.env.DEVELOPMENT == "TRUE"
+                      ? process.env.NEXT_PUBLIC_image_url +
+                        content.image.data.attributes.url
+                      : content.image.data.attributes.url
                   }
                 />
               );

@@ -14,13 +14,16 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
       )}
     >
       <Image
-        src={process.env.NEXT_PUBLIC_image_url + image || "/experience.png"}
+        src={
+          process.env.DEVELOPMENT == "TRUE"
+            ? process.env.NEXT_PUBLIC_image_url + image
+            : image || "/experience.png"
+        }
         className={classNames(
           "md:w-[50%] w-full h-[500px] object-cover ",
           showImageRight ? "rounded-e-full" : "rounded-s-full"
         )}
         width={600}
-        
         height={600}
         alt="home"
       />

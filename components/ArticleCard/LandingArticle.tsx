@@ -22,7 +22,11 @@ export default function LandingArticleCard({
         className="p-0"
       >
         <Image
-          src={process.env.NEXT_PUBLIC_image_url + coverImage}
+          src={
+            process.env.DEVELOPMENT == "TRUE"
+              ? process.env.NEXT_PUBLIC_image_url + coverImage
+              : coverImage
+          }
           className="rounded-t-xl w-full h-96 object-cover"
           width={500}
           height={500}

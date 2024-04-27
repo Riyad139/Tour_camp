@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { useMemo } from "react";
 import Link from "next/link";
 
 export default function FeturedBlog({
@@ -27,7 +26,11 @@ export default function FeturedBlog({
       </div>
       <Image
         className="max-h-[26rem] object-cover lg:[50%] order-1 rounded-3xl"
-        src={process.env.NEXT_PUBLIC_image_url + coverImage}
+        src={
+          process.env.DEVELOPMENT == "TRUE"
+            ? process.env.NEXT_PUBLIC_image_url + coverImage
+            : coverImage
+        }
         width={1920}
         height={1080}
         alt="blog image"
