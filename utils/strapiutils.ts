@@ -16,7 +16,9 @@ export const FetchFromStrapiForInfoBlocks = async (url: string) => {
     );
 
     return result;
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export const FetchBlogFromStrapi = async (url: string) => {

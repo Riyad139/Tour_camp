@@ -14,7 +14,7 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
       )}
     >
       <Image
-        src={image || "/experience.png"}
+        src={process.env.NEXT_PUBLIC_image_url + image || "/experience.png"}
         className={classNames(
           "md:w-[50%] w-full h-[500px] object-cover ",
           showImageRight ? "rounded-e-full" : "rounded-s-full"
@@ -24,10 +24,10 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
         alt="home"
       />
       <div className=" md:w-[50%] w-full mt-5">
-        <h2 className="text-4xl md:text-7xl font-DmSerif font-semibold mb-11">
+        <h2 className="text-2xl md:text-5xl font-DmSerif font-semibold mb-11">
           {headline}
         </h2>
-        <p>{descriptions}</p>
+        <p className="text-sm">{descriptions}</p>
         {button && (
           <Button
             className={classNames(

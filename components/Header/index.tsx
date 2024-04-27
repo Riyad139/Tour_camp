@@ -36,16 +36,6 @@ export default function Header({
       >
         Book now
       </Button>
-      <Image
-        src={"/icon-tree.svg"}
-        className={classNames(
-          "w-20 absolute bottom-10 left-[50%]",
-          textColor === "white" ? " icon " : ""
-        )}
-        width={500}
-        height={500}
-        alt="icon"
-      />
     </section>
   );
 }

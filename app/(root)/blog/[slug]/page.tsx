@@ -17,9 +17,7 @@ export default async function Slug({ params }: { params: { slug: string } }) {
   return (
     <main>
       <BlogHeader
-        img={
-         selectedSlug.coverImage
-        }
+        img={selectedSlug.coverImage}
         text={selectedSlug.headline}
         author={selectedSlug.author}
         createdAt={selectedSlug.createdAt}
@@ -51,7 +49,7 @@ export default async function Slug({ params }: { params: { slug: string } }) {
                   LandScapeImage={content.LandScapeImage}
                   showImageRight={content.showImageRight}
                   image={
-                    
+                    process.env.NEXT_PUBLIC_image_url +
                     content.image.data.attributes.url
                   }
                 />
@@ -62,7 +60,7 @@ export default async function Slug({ params }: { params: { slug: string } }) {
               return (
                 <BlogLandScapeImage
                   image={
-                   
+                    process.env.NEXT_PUBLIC_image_url +
                     content.image.data.attributes.url
                   }
                 />

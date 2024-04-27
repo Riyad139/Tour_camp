@@ -11,9 +11,7 @@ import { InfoType } from "@/utils/type";
 
 export default async function Home() {
   const result = await FetchFromStrapiForInfoBlocks("/infoblock-landing");
-
   const blogs = await FetchBlogFromStrapi("/blogs");
-
   const hero = await FetchHeroesFromStrapi("/hero-landing");
 
   return (
@@ -21,10 +19,10 @@ export default async function Home() {
       <Header
         textColor={!hero?.TextWhite ? "white" : "black"}
         text={hero?.Headline}
-        img={hero?.image}
+        img={process.env.NEXT_PUBLIC_image_url + hero?.image}
       />
       <div className="mt-[25%] space-y-16 ">
-        {result.map((item: InfoType) => (
+        {result?.map((item: InfoType) => (
           <InfoBlock value={item} key={item.id} />
         ))}
       </div>

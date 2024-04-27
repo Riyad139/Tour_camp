@@ -14,7 +14,7 @@ export default async function Experience() {
       <Header
         textColor={hero?.TextWhite ? "white" : "black"}
         text={hero?.Headline}
-        img={ hero?.image}
+        img={process.env.NEXT_PUBLIC_image_url + hero?.image}
       />
       <div className="mt-[25%] space-y-16 ">
         {result.map((item: InfoType) => (

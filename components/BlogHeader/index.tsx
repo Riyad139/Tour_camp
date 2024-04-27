@@ -18,7 +18,7 @@ export default function BlogHeader({
     <section className="flex font-DmSerif  min-h-[80vh] flex-col mt-40 items-start">
       <Image
         className="w-full brightness-50  rounded-br-[15%] rounded-bl-[15%] top-0 object-cover h-[90%]  left-0 -z-10 absolute"
-        src={img}
+        src={process.env.NEXT_PUBLIC_image_url + img}
         alt=""
         width={1000}
         height={1000}

@@ -21,9 +21,9 @@ export default function NavBar() {
   const path = usePathname();
   const [isOpen, setOppen] = useState(false);
   const NavItem = [
-    { name: "the camp.", path: "/" },
-    { name: "the experience.", path: "/experience" },
-    { name: "the blog.", path: "/blog" },
+    { name: "camp.", path: "/" },
+    { name: "experience.", path: "/experience" },
+    { name: "blog.", path: "/blog" },
   ];
 
   return (
@@ -52,11 +52,7 @@ export default function NavBar() {
           </Link>
         ))}
       </ul>
-      <Button
-        variant={"default"}
-        size={"roundedFull"}
-        className="text-xl uppercase"
-      >
+      <Button size={"roundedFull"} className="text-xl bg-terquish uppercase">
         Book Now
       </Button>
       <div className=" block sm:hidden">
@@ -72,7 +68,7 @@ export default function NavBar() {
           <SheetContent className="text-3xl pt-9">
             {NavItem.map((item) => (
               <Link
-                onClick={() => SheetClose(<p/>)}
+                onClick={() => SheetClose(<p />)}
                 key={item.path}
                 href={item.path}
               >
