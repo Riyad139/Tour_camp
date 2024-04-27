@@ -20,7 +20,6 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
           showImageRight ? "rounded-e-full" : "rounded-s-full"
         )}
         width={600}
-        
         height={600}
         alt="home"
       />
