@@ -18,7 +18,6 @@ export default function Header({
         alt=""
         width={1000}
         height={1000}
-        quality={100}
       />
 
       <div

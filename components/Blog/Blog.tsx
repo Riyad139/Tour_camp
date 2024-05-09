@@ -1,6 +1,3 @@
-import Image from "next/image";
-import FeturedArticles from "../FeturedArticles";
-import ArticleCard from "../ArticleCard/ArticleCard";
 import LandingArticleCard from "../ArticleCard/LandingArticle";
 
 export default function Blog({

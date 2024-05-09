@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 export default function ArticleCard({
   headline,
@@ -23,7 +22,7 @@ export default function ArticleCard({
       >
         <Image
           src={
-            process.env.DEVELOPMENT == "TRUE"
+            process.env.NEXT_PUBLIC_DEVELOPMENT == "TRUE"
               ? process.env.NEXT_PUBLIC_image_url + coverImage
               : coverImage
           }

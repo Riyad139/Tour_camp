@@ -23,7 +23,7 @@ export default function LandingArticleCard({
       >
         <Image
           src={
-            process.env.DEVELOPMENT == "TRUE"
+            process.env.NEXT_PUBLIC_DEVELOPMENT == "TRUE"
               ? process.env.NEXT_PUBLIC_image_url + coverImage
               : coverImage
           }
