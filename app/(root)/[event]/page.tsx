@@ -1,3 +1,3 @@
-export default async function EventPage({ id }: { id: string }) {
+export default async function EventPage() {
   return <div></div>;
 }
