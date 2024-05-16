@@ -1,6 +1,8 @@
 import classNames from "classnames";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import Link from "next/link";
 export default function Header({
   img,
   text,
@@ -28,13 +30,15 @@ export default function Header({
       >
         {text}
       </div>
-      <Button
-        className="text-2xl bg-[#14A998] mt-16 rounded-full uppercase"
-        color="#14A998"
-        size={"lg"}
-      >
-        Book now
-      </Button>
+      <Link href={"/event"}>
+        <Button
+          className="text-2xl bg-[#14A998] mt-16 rounded-full uppercase"
+          color="#14A998"
+          size={"lg"}
+        >
+          Book now
+        </Button>
+      </Link>
     </section>
   );
 }

@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { InfoType } from "@/utils/type";
+import Link from "next/link";
 
 export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
   const { headline, descriptions, showImageRight, image, button } = value;
@@ -32,14 +33,16 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
         </h2>
         <p className="text-sm">{descriptions}</p>
         {button && (
-          <Button
-            className={classNames(
-              "uppercase mt-9 text-xl rounded-full",
-              button?.color == "terquish" ? "bg-terquish" : "bg-beige"
-            )}
-          >
-            {button?.label}
-          </Button>
+          <Link href={"/event"}>
+            <Button
+              className={classNames(
+                "uppercase mt-9 text-xl rounded-full",
+                button?.color == "terquish" ? "bg-terquish" : "bg-beige"
+              )}
+            >
+              {button?.label}
+            </Button>
+          </Link>
         )}
       </div>
     </div>
