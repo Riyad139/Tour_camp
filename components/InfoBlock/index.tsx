@@ -31,6 +31,7 @@ export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
         <h2 className="text-2xl md:text-5xl font-DmSerif font-semibold mb-11">
           {headline}
         </h2>
+        
         <p className="text-sm">{descriptions}</p>
         {button && (
           <Link href={"/event"}>
