@@ -10,16 +10,11 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useState } from "react";
 
 export default function NavBar() {
   const path = usePathname();
-  const [isOpen, setOppen] = useState(false);
   const NavItem = [
     { name: "camp.", path: "/" },
     { name: "experience.", path: "/experience" },
@@ -31,7 +26,7 @@ export default function NavBar() {
       <Image
         className={classNames(
           "w-12",
-          path === "/blog"
+          path !== "/camp" && path !== "/experience"
             ? ""
             : "filter invert sepia-[3%] saturate-[825%] hue-rotate-[200deg] brightness-[118%] contrast-[100%] fill-white"
         )}
@@ -43,7 +38,9 @@ export default function NavBar() {
       <ul
         className={classNames(
           " sm:flex hidden text-xl md:text-2xl font-bold space-x-7",
-          path === "/blog" ? "text-black" : "text-white"
+          path !== "/camp" && path !== "/experience"
+            ? "text-black"
+            : "text-white"
         )}
       >
         {NavItem.map((item) => (

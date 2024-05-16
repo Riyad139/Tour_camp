@@ -5,7 +5,6 @@ import { InfoType } from "@/utils/type";
 
 export default function InfoBlock<InfoBlock>({ value }: { value: InfoType }) {
   const { headline, descriptions, showImageRight, image, button } = value;
-
   return (
     <div
       className={classNames(
