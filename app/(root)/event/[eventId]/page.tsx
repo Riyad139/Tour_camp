@@ -60,6 +60,7 @@ export default async function EventPage({
               placeholder=""
             />
           </div>
+          
           <div>
             <Label htmlFor="tel">Telephone</Label>
             <Input
