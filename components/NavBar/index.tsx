@@ -26,7 +26,7 @@ export default function NavBar() {
       <Image
         className={classNames(
           "w-12",
-          path == "/blog" || path == "/event"
+          path == "/blog" || path.includes("/event")
             ? ""
             : "filter invert sepia-[3%] saturate-[825%] hue-rotate-[200deg] brightness-[118%] contrast-[100%] fill-white"
         )}
@@ -38,7 +38,9 @@ export default function NavBar() {
       <ul
         className={classNames(
           " sm:flex hidden text-xl md:text-2xl font-bold space-x-7",
-          path == "/blog" || path == "/event" ? "text-black" : "text-white"
+          path == "/blog" || path.includes("/event")
+            ? "text-black"
+            : "text-white"
         )}
       >
         {NavItem.map((item) => (
@@ -57,7 +59,9 @@ export default function NavBar() {
           <SheetTrigger
             className={classNames(
               "",
-              path === "/blog" ? "text-black" : "text-white"
+              path === "/blog" || path.includes("/event")
+                ? "text-black"
+                : "text-white"
             )}
           >
             <RiMenuFoldLine size={35} />

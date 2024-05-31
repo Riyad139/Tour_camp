@@ -10,3 +10,11 @@ export interface InfoType {
   showImageRight: boolean;
   image: string;
 }
+
+export interface EventType {
+  id: string;
+  headline: string;
+  cover: string;
+  descriptions: string;
+  packages: { id: string; couple: number; single: number; group: number };
+}

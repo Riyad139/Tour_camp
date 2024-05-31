@@ -6,17 +6,19 @@ export default function ArticleCard({
   headline,
   coverImage,
   slug,
+  path,
 }: {
   headline: string;
   coverImage: string;
   slug: string;
+  path?: string;
 }) {
   const router = useRouter();
   return (
-    <Card className=" cursor-pointer w-full sm:w-[46%] md:w-[29%] rounded-t-xl">
+    <Card className=" pb-3 cursor-pointer bg-[#F1E8D9] w-full sm:w-[46%] md:w-[29%] rounded-3xl">
       <CardContent
         onClick={() => {
-          router.push("/blog/" + slug);
+          router.push(!path ? "/blog/" : path + slug);
         }}
         className="p-0"
       >

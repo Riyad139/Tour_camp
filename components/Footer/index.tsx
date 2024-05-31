@@ -3,16 +3,10 @@ import Link from "next/link";
 
 export default function Footer() {
   const NavItem = [
-    { name: "the camp.", path: "/" },
-    { name: "the blog.", path: "/blog" },
-    { name: "the experience.", path: "/experience" },
-    { name: "the events.", path: "/events" },
-  ];
-
-  const footerLink = [
-    { name: "Imprint", path: "Imprint" },
-    { name: "Terms and Conditions", path: "Imprint" },
-    { name: "Data Protection", path: "Imprint" },
+    { name: "camp.", path: "/" },
+    { name: "blog.", path: "/blog" },
+    { name: "experience.", path: "/experience" },
+    { name: "events.", path: "/event" },
   ];
 
   return (
