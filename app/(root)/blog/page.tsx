@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 
 export default async function Blog() {
   const result = await FetchBlogFromStrapi("/blogs");
-  const res = cookies().get("subscribed")?.value;
+  // const res = cookies().get("subscribed")?.value;
   const feturedBlog = result.filter((item: any) => item.isHighlighted === true);
   const feturedArticles = result.filter(
     (item: any) => item.isHighlighted === false
@@ -15,7 +15,7 @@ export default async function Blog() {
   return (
     <main>
       <FeturedBlog {...feturedBlog[0]} />
-      <Subscriptions isSubscribed={res == "true" ? true : false} />
+      <Subscriptions isSubscribed={true} />
       <FeturedArticles blogs={feturedArticles} />
     </main>
   );
