@@ -1,3 +1,4 @@
+import ArticleCard from "@/components/ArticleCard/ArticleCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -84,6 +85,23 @@ export default async function EventPage({
             <p>Family: {selectedEvents.packages.group}tk</p>
           </div>
         </div>
+      </div>
+      <h2 className="text-5xl font-DmSerif pt-10 pb-20 text-center">
+        Suggested Tours
+      </h2>
+      <div className="flex w-full justify-center gap-16 flex-wrap">
+        {res.map(
+          (data: EventType) =>
+            data.id != params.eventId && (
+              <ArticleCard
+                slug={data.id}
+                headline={data.headline}
+                coverImage={data.cover}
+                key={data.id}
+                path="/event/"
+              />
+            )
+        )}
       </div>
     </>
   );
