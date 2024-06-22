@@ -1,46 +1,21 @@
-"use client";
-import { useEffect, useState } from "react";
-
 import ArticleCard from "@/components/ArticleCard/ArticleCard";
-
 import MarkdownToHtml from "@/utils/remarkTool";
 import { FetchEventsFromStrapi } from "@/utils/strapiutils";
 import { EventType } from "@/utils/type";
-
-import { CallCheckout } from "@/utils/CheckOutUtils";
-import Loader from "./components/Loader";
 import SignUp from "./components/SignUp";
 
-export default function EventPage({ params }: { params: { eventId: string } }) {
-  const [res, setRes] = useState<any>(null);
-  const [description, setDescriptions] = useState("");
-  useEffect(() => {
-    let res;
-    const fun = async () => {
-      res = await FetchEventsFromStrapi("/events");
-      setRes(res);
-    };
-    fun();
-  }, [params.eventId]);
+export default async function EventPage({
+  params,
+}: {
+  params: { eventId: string };
+}) {
+  const res = await FetchEventsFromStrapi("/events");
 
-
-
-  const selectedEvents: EventType = res?.find(
+  const selectedEvents: EventType = res.find(
     (data: EventType) => data.id == params.eventId
   );
 
-  useEffect(() => {
-    if (!selectedEvents) return;
-    let res;
-    const fun = async () => {
-      res = await MarkdownToHtml(selectedEvents.descriptions);
-      setDescriptions(res);
-    };
-    fun();
-  }, [selectedEvents]);
-
-  if (!res || description.length == 0) return <Loader />;
-
+  const description = await MarkdownToHtml(selectedEvents.descriptions);
   return (
     <>
       <div className="w-full py-28 gap-12 flex md:flex-row flex-col">
@@ -73,4 +48,11 @@ export default function EventPage({ params }: { params: { eventId: string } }) {
       </div>
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const result = await FetchEventsFromStrapi("/events");
+  return result?.map((data: EventType) => ({
+    eventId: data.id + "",
+  }));
 }
