@@ -1,6 +1,7 @@
 import Blog from "@/components/Blog/Blog";
 import Header from "@/components/Header";
 import InfoBlock from "@/components/InfoBlock";
+import { CallCheckout } from "@/utils/CheckOutUtils";
 
 import {
   FetchBlogFromStrapi,
@@ -13,7 +14,6 @@ export default async function Home() {
   const result = await FetchFromStrapiForInfoBlocks("/infoblock-landing");
   const blogs = await FetchBlogFromStrapi("/blogs");
   const hero = await FetchHeroesFromStrapi("/hero-landing");
-
   return (
     <main className="">
       <Header

@@ -3,7 +3,7 @@ import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { createContext } from "react";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = DM_Serif_Display({
   subsets: ["latin"],
@@ -29,6 +29,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

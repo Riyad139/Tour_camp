@@ -72,7 +72,6 @@ export default async function Slug({ params }: { params: { slug: string } }) {
           }
         }
       )}
-
       <FeturedArticles blogs={result} />
     </main>
   );
