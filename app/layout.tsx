@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description: "A place to find your sansations",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
